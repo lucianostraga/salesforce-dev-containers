@@ -10,30 +10,17 @@ One Claude Code dev container per Salesforce project. Each one keeps its own **C
 
 ## How it works
 
-```mermaid
-flowchart LR
-    subgraph acme["acme dev container"]
-        direction TB
-        a1["Code<br/>~/projects/acme"]
-        a2["Home volume: acme-home<br/>Claude login, orgs, Dev Hub,<br/>MCP servers, memory"]
-        a3["Network: acme-net<br/>only acme's domains"]
-    end
-    subgraph globex["globex dev container"]
-        direction TB
-        g1["Code<br/>~/projects/globex"]
-        g2["Home volume: globex-home<br/>Claude login, orgs, Dev Hub,<br/>MCP servers, memory"]
-        g3["Network: globex-net<br/>only globex's domains"]
-    end
-    acme x--x|no access| globex
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/how-it-works-dark.svg">
+  <img alt="Two projects, acme and globex, each in its own dev container with its own code, home volume and network, with no access between them" src="docs/how-it-works-light.svg" width="100%">
+</picture>
 
 ## Where it sits
 
-```mermaid
-flowchart LR
-    n1["No isolation"] --> n2["Profiles"] --> n3["OS sandbox"] --> n4["Dev container"] --> n5["Dev container<br/>per project"] --> n6["MicroVM / VM"] --> n7["Cloud"]
-    style n5 fill:#0176D3,color:#fff,stroke:#0176D3
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/isolation-ladder-dark.svg">
+  <img alt="Isolation options from no isolation to cloud, with dev container per project highlighted as this repo" src="docs/isolation-ladder-light.svg" width="100%">
+</picture>
 
 | Option | What it separates | Trade-off |
 | --- | --- | --- |
