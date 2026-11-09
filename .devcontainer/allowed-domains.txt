@@ -1,0 +1,14 @@
+# Domains this project's dev container can reach, besides Claude Code, VS Code, npm and GitHub.
+# One exact domain per line (no wildcards). Anything after # is ignored.
+# If a domain doesn't resolve, the container starts with its network closed and the error names the domain.
+# After editing it on your machine, apply it inside the container with: sudo /usr/local/bin/init-firewall.sh
+
+# Salesforce login
+login.salesforce.com
+test.salesforce.com
+
+# Add this project's orgs and tools, for example:
+# acme.my.salesforce.com                    # production or Dev Hub
+# acme--dev.sandbox.my.salesforce.com       # a sandbox
+# acme.atlassian.net                        # Jira
+# mcp.atlassian.com                         # Atlassian's remote MCP server
